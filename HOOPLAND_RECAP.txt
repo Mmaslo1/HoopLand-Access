@@ -1,0 +1,351 @@
+﻿HOOP LAND ACCESS - RECAP OF EVERYTHING SO FAR
+Updated 15 November 2026, mod version 0.6.0
+
+========================================
+1. MY HONEST VERDICT
+========================================
+- Hoop Land can become a game you can really play: about 70 to 80 percent chance.
+- Why it is hopeful:
+  - The court is small and flat (2D, seen from the side). No rooms, stairs or walls.
+  - Only 10 players and 1 ball. The mod can always know where everyone is.
+  - Menus, career, franchise, stats, trades: close to 90 percent doable.
+  - The shot meter can become a sound you time your release to.
+  - The game's code has readable names for the important things: the players,
+    who has the ball, your pass target, "in position" for a shot, "is open",
+    the shot meter, and the game's own play-by-play text.
+- What is hard:
+  - Real games are fast. Too much talking and you fall behind, too little and
+    you are lost. Getting the balance right needs testing with you.
+  - Defense is the hardest part.
+  - Quick passes need a fast, smart way to pick a teammate.
+
+========================================
+2. YOUR OLD MOD
+========================================
+- It loaded and read menus, and your ideas were good (rim distance in feet,
+  sweet spot beep, beep toward your man, open teammate sound).
+- Problems: the game updated on 3 November after it was built; the court
+  features were never tested; the code was about 21,000 lines (one file almost
+  13,000), slow and fragile; about 10 different beeps (too many sounds).
+- You chose a CLEAN REBUILD. The old mod is kept safe in:
+  Downloads\Games_Backup\HoopLand_oldmod_2026-11-15
+
+========================================
+3. ONE BIG RISK (and how we handle it)
+========================================
+- The game scrambles most of its inner names, and the scramble changes with
+  every game update. The new mod only uses the readable names, so updates
+  should break much less. After each game update I re-check it.
+
+========================================
+4. WHAT IS NOT REASONABLE OR EXTREMELY HARD
+========================================
+- Fully manual defense with no help: staying in front of a fast guard, timing
+  blocks and steals by ear. Plan: spoken help, you still choose when to steal
+  or jump.
+- You told me the game's Offensive and Defensive Assistance only unlock with a
+  created or solo player. So the mod gives its own help where they are locked.
+- Knowing where all 10 players are at once. Nobody can follow that by ear.
+  The mod tells you only what matters now: your spot, the ball, the open
+  teammate, your man.
+- Fast breaks and quick passes in traffic: possible, but slower than a sighted
+  player at first. An easier difficulty helps.
+- Dunk contest (button combos in mid-air): very hard. Maybe later.
+- Court, jersey and logo designer: visual tools. Skipped (color names can be read).
+- Replays and GIF sharing: visual only. Skipped.
+
+VERY DOABLE
+- All menus, career, franchise, stats, trades, drafts.
+- Shooting with a timing tone. Free throws. 3-point contest.
+- Offense: move to a spot, hear "good shot spot", shoot or pass.
+- Simulating games and running a team as coach.
+
+========================================
+5. BUILD ORDER (each step tested by you before the next)
+========================================
+1. Base: mod loads, speaks through JAWS, reads every menu.      <- DONE, polishing
+2. Game info on keys: score, clock, quarter, shot clock, who has the ball.
+   The game's own play-by-play spoken, short.                    <- NEXT
+3. Shooting: one rising tone while you hold shoot, top = release.
+   Shot result spoken (perfect, early, late, made, missed).
+   Where you are: "left wing, behind the arc, 24 feet".
+4. Passing: who is open, by name and spot. Pass target spoken.
+5. Defense: "Defense, you guard Smith, he is left of you." One cue when your
+   man drives past you.
+6. Career and season screens: schedule, stats, contracts, trades, upgrades.
+7. Extras: 3-point contest, free throws, timeouts, subs, calling plays.
+
+========================================
+6. WHAT VERSION 0.2.2 DOES (fixed from your test)
+========================================
+- Menus are a straight list now: Up and Down go through every item in reading
+  order, top to bottom, left to right. Works with controller AND keyboard.
+- Settings: Up/Down goes from setting to setting. Left/Right moves between the
+  choices. A or Enter picks one. You hear the setting name and its current
+  choice, e.g. "SFX VOLUME, Mid, selected". After picking: "3, selected".
+- Pickers with arrows (like Background Color): Left/Right changes the value
+  and speaks it. Colors get a name ("sky blue").
+- Each screen says its name when it opens ("SETTINGS", "EXHIBITION",
+  "SELECT SAVE SLOT").
+- Group names are said once when you enter a group, not on every item.
+- Exhibition team buttons say the team ("ROAD TEAM, Boston CELTICS").
+- Save slots read in number order (1, 2, 3...). Your career is SAVE 4.
+- Scroll bars are skipped.
+- During a match the mod's menu keys switch off, so they never fight the
+  game's own keyboard controls. Escape pauses the match.
+
+========================================
+6b. NEW IN 0.3 TO 0.5 (from your second test)
+========================================
+- Controls screens now say the key or button: "MOVE UP, W", "TIMEOUT, Space",
+  "PAUSE, Escape". This works anywhere the game shows a key picture,
+  including the tutorial prompts and the pause screen.
+- When you press a control row, the game waits for a new key. The mod now says
+  "Press any button for MOVE UP. Escape cancels." and stays out of the way
+  until you press the new key. Then it reads the row with its new key.
+  (Before, this was silent, which is why Escape said "No back button".)
+- My Player ratings read with numbers: "Layup 7 of 14, Dunk 7 of 14 ..."
+  The second number is your potential (max).
+- Pickers like Scouting / Averages / Totals on Player Profile read their value.
+- Practice drills read their cost again ("60" minutes).
+
+MATCHES (step 2, new):
+- The game's own commentator line is spoken: "Brown hits the 23ft jumpshot!",
+  "Shot blocked by boucher!", fouls.
+- The score is spoken after every basket: "BOS 2, ATL 3".
+- New quarter is spoken.
+- "Loose ball" and "ATL ball" / "BOS ball" when possession changes.
+
+SHOOTING (step 3, new):
+- While YOU hold shoot, a tone plays. Its pitch follows the shot meter: it
+  rises toward the green zone, then falls. Release at the highest pitch.
+  The green window is very short (about 40 thousandths of a second), so learn
+  the rhythm of the rise; release when it stops climbing.
+- After the shot the game's own feedback is spoken: "TOO EARLY",
+  "GOOD RELEASE", and so on.
+- F8 says the rim distance and direction: "Rim 27 feet, to your right, down".
+
+========================================
+7. KEYS (MENUS)
+========================================
+Keyboard (the game itself has no keyboard menu control, the mod adds it):
+- Up / Down arrow: previous / next item (Tab and Shift+Tab also work)
+- Left / Right arrow: change choice, or move inside a row
+- Enter or Space: press / pick
+- Escape or Backspace: Back (presses the screen's Back or Cancel button)
+- Home / End: first / last item
+- F1: repeat current item, with its place ("3 of 11")
+- F2: read everything on the screen
+- F11: straight-list menus on/off (saved)
+- F12: save this screen to a file for Claude (when something reads wrong)
+Controller:
+- D-pad: move (straight list), A pick, B back (game's own)
+- Right stick click: repeat current item
+- Left stick click: read the whole screen
+During a match (F-keys never clash with the game's own play keys):
+- F5: score, quarter, clock, shot clock
+- F6: who has the ball
+- F7: shot tone on/off (saved)
+- F8: rim distance and direction
+- Escape: pause (the game's own key; the mod helps if it does not pause)
+Controller during a match (I read the game's own button list; these are the
+only buttons the game does not use in play):
+- RT: score, quarter, clock, shot clock (same as F5)
+- LT: who has the ball (same as F6)
+- R3 (click right stick): rim distance (same as F8)
+- L3 (click left stick): repeat the last commentator line
+- F7 (keyboard): shot help: rising tone, count-in beeps, or off
+
+HOW TO SHOOT
+- Xbox: HOLD B. Keyboard: HOLD Right arrow. The meter starts when you press.
+  Let go to shoot. Holding too short = TOO EARLY, too long = TOO LATE.
+- Rising tone mode: let go when the tone stops climbing (its highest pitch).
+- Count-in mode: you hear beep, beep, BEEP. Let go on the third, higher beep.
+  The mod predicts the green zone from the meter's speed (tested: within about
+  20 thousandths of a second).
+
+THE GAME'S BUTTONS (from its own settings)
+- Move: left stick or D-pad. Right stick: special moves.
+- Offense with ball: A pass, B shoot, X cross, Y step, LB call play, RB icon pass.
+- Offense off ball: A call for ball, B set screen, X teammate shoot, Y rebound, RB icon switch.
+- Defense: A switch player, B take charge, X steal, Y block, LB lock defense, RB icon switch.
+- View: timeout. Menu: pause. LB: quick subs.
+
+========================================
+8. THE GAME'S OWN KEYBOARD CONTROLS FOR PLAYING (found in the pause screen)
+========================================
+Yes, the game can be played on keyboard. The mod will use only F-keys during
+matches so it never blocks these.
+- Move: W A S D
+- Offense with the ball: Shoot = hold Right arrow. Pass = Down arrow.
+  Lob pass = hold Down. Pump fake = Right. Step = Up. Switch hands = Left.
+  Hesitation = hold Left. Icon pass = Right Shift. Call play = Shift.
+- Off the ball: Call for ball = Down. Call for lob = hold Down.
+  Set screen = hold Right. Teammate shoot = Left. Rebound = Up.
+- Defense: Steal = Left. Block / rebound = Up. Take charge = hold Right.
+  Switch player = Down. Intentional foul = hold Left. Lock defense = hold Shift.
+  Icon switch = Right Shift.
+- Call timeout: Space.
+(I read these from the screen; some rows may be mixed up between offense and
+defense. We will confirm them in play.)
+
+========================================
+9. NEXT STEP
+========================================
+Steps 2 and 3 are built (match information and shooting tone). Please test:
+1. Exhibition, set PLAYER CONTROL so you control a team, play a few minutes.
+   Listen to commentary, score, possession. Press F5, F6, F8.
+2. Career, Practice, Shootaround (no XP cost). Hold Right arrow to shoot,
+   listen to the tone, release at the top. You hear TOO EARLY, GOOD RELEASE...
+Then step 4: passing (who is open, by name and spot), and step 5: defense.
+
+========================================
+10. FILES
+========================================
+- This recap:  Documents\HoopLandAccess\HOOPLAND_RECAP.txt
+- The plan:    Documents\HoopLandAccess\HOOPLAND_PLAN.txt
+- Mod code:    Documents\HoopLandAccess\src
+- Installed:   Hoop Land game folder\Mods\HoopLandAccess.dll
+- To come back to this project: open a terminal and type
+  cd "C:\Users\micha\OneDrive\Documents\HoopLandAccess"
+  then
+  claude
+
+
+
+========================================
+12. CAREER vs FRANCHISE, AND THE NEW PLAYER (15 November)
+========================================
+The game's Season Modes are (read from the game):
+- CAREER MODE: you are ONE player ("Begin your legacy as a young prospect").
+  You play only your player's minutes, train, do press conferences, get drafted.
+- FRANCHISE MODE: you run a whole TEAM ("Build your team into a championship
+  contender"). Roster, trades, draft, and you can play the games.
+- CAMPUS MODE (beta): you run a college program and recruit.
+- COMMISSIONER MODE: total control of the league over simulated seasons.
+So franchise is NOT the same as career.
+
+NEW PLAYER: Claude created "Ace Hooper" in a new Career in SAVE 5
+(your Samuel Bush career in SAVE 4 is untouched).
+- 7'1" Forward Center, Sharpshooter / Post Scorer, from Kingston, RI.
+- His upgrade points are NOT spent yet (one point went to Blocking by accident
+  while testing). You choose how to build him.
+- Every creation screen now reads: names (typing works, letters are spoken),
+  archetypes, height, weight, position, hometown, number, and appearance
+  (skin tone, hair style, colors by name).
+
+========================================
+13. CLAUDE PLAYED A HALF (15 November, version 0.6.2 after fixes)
+========================================
+Claude played Alabama vs Albuquerque with a test script that only used what
+the mod says, plus the game keys. Lost 19 to 3. What it showed:
+- 8 five-second violations: nothing said "you must inbound". FIXED: the mod now
+  says "You inbound the ball. Press A to pass."
+- Rim distance pointed at the wrong basket in the backcourt. FIXED.
+- "You are not on the court" repeated over and over: that was Claude's test
+  script pressing F8 twice a second while menus were up. The mod now remembers
+  your player between plays, so this should not happen to you.
+- Score said "+3" once while it animated. FIXED.
+- A miss was silent. FIXED: "Missed." if the score did not change.
+- Defense: holding Lock Defense alone did not stop layups. NEXT BIG JOB:
+  defense cues (where your man is, driving left/right, in range to steal).
+- Need also: warnings near the sideline/baseline (an out-of-bounds happened).
+- The game closed at the end because the script kept pressing keys during the
+  halftime screen and reached QUIT. A person hears the menu and stops; not a
+  mod problem.
+
+========================================
+14. VERSION 0.7.0 (15 November, afternoon): DEFENSE, LINES, PASSING
+========================================
+Built and checked by Claude in 7 test matches (Boston vs Atlanta exhibition,
+Player 1 on keyboard). Installed. Full key list: Downloads\HoopLand_Keys.txt.
+
+DEFENSE
+- "Defense. You guard Young." The mod uses the game's own matchup (your
+  position against his), so it stays steady.
+- "Past you, left!" when your man gets nearer your hoop than you.
+- "Steal!" when your man has the ball and is in reach.
+- "Jump!" when an opponent near you starts a shot.
+- F4 (or right stick click on defense): "Guarding Young, he has the ball,
+  9 feet, right. Step right and down." or "Good spot, you are between him
+  and the hoop."
+
+LINES
+- "Sideline!" / "Baseline!" about a second before you step out, only while
+  you have the ball (checked: warning came 0.8 s before the whistle).
+- "Half court! Don't go back." with the ball near the half-court line.
+- "Bring the ball over half court, go right." after 3 seconds in your back
+  court (the game calls an 8-second violation).
+
+PASSING
+- "Pass: Hauser, covered, right." your pass target while you hold the ball,
+  and "Hauser open." when he gets open.
+- F3 (or left stick click on offense): all teammates, nearest first, open
+  or covered, feet and direction. Hold Right Shift (icon pass) and press F3:
+  it also says each teammate's icon key, for example "icon Left arrow".
+- "Hauser inbounds. Call for the ball: A. Keyboard: Down arrow." This was
+  the cause of all the five-second violations: when a teammate inbounds,
+  the game waits for you to call for the ball. Checked: pressing Down works.
+- "You are Brown." when the game hands you another player.
+
+WHAT TO TEST (one exhibition, P1 vs CPU, about 10 minutes)
+1. After the other team scores: hear "... inbounds. Call for the ball",
+   press Down arrow, the ball comes in.
+2. Bring the ball up (hold D or A toward "go right/left"), listen for
+   "Half court" and "Sideline". Press F3. Hold Right Shift and press F3.
+3. On defense press F4, try to step where it says, listen for "Past you",
+   "Steal" (press Left arrow), "Jump" (press Up arrow).
+4. Tell Claude what was too much talk, too late, or wrong. Claude reads the log.
+
+NOT SURE YET
+- Steal reach is a guess (about 5 feet). The log records it for tuning.
+- Controller icon names (A/B/X/Y) are not yet heard in play; keyboard ones are.
+
+========================================
+15. VERSION 0.8.0 (15 November, evening): FRANCHISE, CREATE PLAYER, ASSISTS
+========================================
+Built and checked by Claude in the game. A TEST franchise was made in
+SAVE 12 (Boston Charms) and a test career was started in SAVE 11 (not
+finished). Your saves in slots 4 and 5 were not touched. You can delete
+saves 11 and 12 any time.
+
+FRANCHISE
+- All lists are read as tables with column names (roster, contracts,
+  trade block, free agents, lineup, schedule, player stats).
+- Star ratings are read: "3.5 stars".
+- Select Team: changing the team reads its whole card (division, offense
+  and defense rank, cap space, the five starters).
+- Front Office: staff jobs ("Head Coach, I. Petek, level 72") and
+  facility grades ("MEDICAL facility, grade C").
+- Set Lineup: Enter picks a player, Enter on another swaps them. Spoken.
+- Trade Creator: which team each "Add Trade Asset" belongs to, and the
+  chance the trade is accepted on CONFIRM. Two lists side by side (players
+  and draft picks) are read one list at a time.
+- Offensive game plan: scoring options with their player, and usage rate,
+  focus and play selection say which option (1, 2, 3) they belong to.
+- F2 reads each box on screen as one piece, so the season hub no longer
+  mixes league leaders, news and standings.
+
+CREATE PLAYER
+- F3 reads the skill bars: "FINISHING: Layup 30, Dunk 35, Inside 45 ..."
+  Press it after you change archetype, height or weight.
+- The same works on a Player Profile (scouting report).
+- Names, hometown, archetypes, height, weight, position all read as before.
+
+ASSISTS
+- Found: the game's Offensive/Defensive Assistance are in Settings >
+  Control, but hidden on PC because they are made for phones. The mod
+  now shows DEFENSIVE ASSISTANCE (on), OFF-BALL ASSISTANCE (off) and
+  DEFENSIVE AUTO-SWITCH (off). Change them with Left / Right arrow.
+
+WHAT TO TEST (after the match test in section 14)
+1. Settings > Control: turn OFF-BALL ASSISTANCE and DEFENSIVE AUTO-SWITCH
+   on if you like, then play an exhibition.
+2. Season Modes > an empty save > Franchise: pick a team (listen to the
+   team cards), open Roster, Front Office, Contracts, Edit Lineup.
+3. Career > Create Player: change archetype and press F3.
+Tell Claude what was confusing. Claude reads the log.
+
+NOT DONE YET
+- The Draft and Playoffs screens were not reached in the test (they come
+  later in a season). The table reader should handle them; check later.

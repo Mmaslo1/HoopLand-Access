@@ -1,0 +1,54 @@
+﻿HOOP LAND ACCESS - THE PLAN
+Written 15 November 2026
+
+WHAT IS GOOD NEWS
+- The game's code has readable names for the important things: the 10 players,
+  who has the ball, who you are, your pass target, "in position" for a shot,
+  "is open", the shot meter, and even the game's own play-by-play text.
+- The game has Offensive and Defensive Assistance, but (you told me) only
+  after you have a created or solo player. So the mod gives its own spoken
+  help in the modes where those are locked.
+
+THE ONE BIG RISK
+- The game scrambles most of its inner names, and the scramble changes with
+  every game update. The old mod used scrambled names in places, so updates
+  break it. The new mod will only use the readable names, so updates should
+  break much less. After each game update I still re-check it.
+
+BUILD ORDER (each step tested by you before the next)
+1. Base: the mod loads, speaks through JAWS, reads every menu item.
+   Team and player screens read with ratings and stats.
+2. Game info on keys: score, clock, quarter, shot clock, who has the ball.
+   The game's own play-by-play spoken: "Smith steals the ball", "Jones,
+   3 pointer, good". Short.
+3. Shooting: one rising tone while you hold shoot, top = release.
+   The game's shot result spoken: perfect, early, late, made, missed.
+   Where you are: "left wing, behind the arc, 24 feet".
+4. Passing: who is open, spoken by name and spot. Your pass target spoken
+   when it changes.
+5. Defense: "Defense, you guard Smith, he is left of you". Game's defensive
+   assistance on. One cue when your man drives past you.
+6. Career and season: schedule, stats, contracts, trades, upgrades.
+7. Extras: 3-point contest, free throws, timeouts, subs, calling plays.
+
+WHAT IS NOT REASONABLE OR EXTREMELY HARD
+- Fully manual defense with no help: staying in front of a fast guard,
+  timing blocks and steals. Extremely hard by ear. Plan: game's defensive
+  assistance + a few spoken cues. You still choose when to steal or jump.
+- Knowing where all 10 players are at once. Nobody can follow that by ear.
+  We tell you only what matters right now: your spot, ball, open teammate,
+  your man.
+- Fast breaks and quick passes in traffic: possible, but you will be slower
+  than a sighted player at first. Difficulty setting Easy helps.
+- Dunk contest (button combos in mid-air): very hard. Maybe later, low priority.
+- Court, jersey and logo designer: visual tools. We can read color names,
+  but designing looks is not worth the effort.
+- Replays and GIF sharing: visual only. Skipped.
+- Pixel-perfect things like exact player sprite looks: skipped.
+
+VERY DOABLE
+- All menus, career, franchise, stats, trades, drafts.
+- Shooting with a timing tone. Free throws. 3-point contest.
+- Offense: dribble to a spot, hear "good shot spot", shoot or pass.
+- Simulating games and running a team as coach.
+

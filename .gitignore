@@ -1,0 +1,8 @@
+﻿# Decompiled game code and dumps (not ours)
+research/
+# Test bots (local only)
+tools/
+bin/
+obj/
+*.dll
+*.log

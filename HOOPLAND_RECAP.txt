@@ -349,3 +349,47 @@ Tell Claude what was confusing. Claude reads the log.
 NOT DONE YET
 - The Draft and Playoffs screens were not reached in the test (they come
   later in a season). The table reader should handle them; check later.
+
+========================================
+16. VERSION 0.9.0 (16 November, night): DRAFT AND PLAYOFFS
+========================================
+Built from the game's code. NOT tested in the game yet: a franchise
+season has to reach the draft first.
+
+DRAFT LOTTERY
+- When the lottery animation ends, the mod reads the top picks:
+  "Lottery results. Pick 1: ... Pick 2: ..."
+
+LIVE DRAFT
+- On opening: "Draft. F5 says who is on the clock and your team's needs."
+- Each pick is spoken: "Pick 5. Boston Charms: J. Smith, PG, age 20."
+  When the game simulates many picks fast, they are grouped:
+  "8 more picks. Last: ..." (no long flood of speech).
+- When it is YOUR turn: "You are on the clock. Round 1, pick 7. Pick a
+  player from the list, or press Auto Pick."
+- F5: round and pick, who is on the clock, your record, roster size,
+  how many players you have at each position, and your picks.
+- The player list is read like other tables (Up and Down).
+
+PICK ANNOUNCEMENT ("With the first pick...")
+- Spoken once the text finishes typing, with the player card.
+
+DECLARE FOR DRAFT (career press conference)
+- Each question is spoken once it finishes typing. Answers are buttons.
+
+PLAYOFF BRACKET
+- F5 reads the current round and each part of the bracket.
+- F2 still reads the whole screen.
+
+FOR CLAUDE
+- The first time each of these screens opens, the mod saves its layout
+  in the game's UserData folder (HoopLandAccess_draft.txt, _lottery,
+  _draft_selection, _declare, _bracket). Read them to fix the readers.
+
+WHAT TO TEST
+1. In a franchise season, sim to the end (or play) until the playoffs.
+   Open the bracket, press F5.
+2. Go on to the lottery and the draft. Listen for picks and "You are on
+   the clock". Press F5. Pick a player.
+Tell Claude what was wrong or too long. Claude reads the log and the
+saved screen files.

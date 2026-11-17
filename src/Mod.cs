@@ -9,7 +9,7 @@ namespace HoopLandAccess
     /// <summary>Entry point. Keeps the per-frame loop small: each feature lives in its own file.</summary>
     public class Mod : MelonMod
     {
-        public const string Version = "0.8.0";
+        public const string Version = "0.9.0";
 
         public static void Log(string s) => MelonLogger.Msg(s);
 
@@ -75,7 +75,9 @@ namespace HoopLandAccess
             // Controller in a match: the game uses sticks, D-pad, A B X Y, LB, RB, View, Menu.
             // Free (proven from the game's bindings 2026-11-15): LT, RT, L3, R3.
             bool live = MatchInfo.Active || MenuReader.InLiveGame();
-            if (Keys.Pressed(Keys.F(5)) || (live && Keys.PadPressed(Keys.RT))) MatchInfo.SayStatus();
+            if (!live && Keys.Pressed(Keys.F(5)) && Season.DraftActive) Season.SayDraftStatus();
+            else if (!live && Keys.Pressed(Keys.F(5)) && Season.Bracket() != null) Season.SayBracket();
+            else if (Keys.Pressed(Keys.F(5)) || (live && Keys.PadPressed(Keys.RT))) MatchInfo.SayStatus();
             if (Keys.Pressed(Keys.F(6)) || (live && Keys.PadPressed(Keys.LT))) MatchInfo.SayBall();
             // R3: on offense the rim, on defense your man.  L3: on offense your teammates, on defense the last commentator line.
             if (live && Keys.PadPressed(Keys.RightStick)) { if (Defense.OnDefense) Defense.SayMan(); else CourtMap.SayRim(); }

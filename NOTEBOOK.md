@@ -1,4 +1,4 @@
-﻿# Notebook: Hoop Land
+# Notebook: Hoop Land
 
 ## Game
 
@@ -25,6 +25,10 @@
 - Old mod by user + Cursor AI (reference only, do not copy wholesale): C:\Users\micha\Downloads\New Hoopland basketball\HooplandAccessibilityMod
 - Old Il2CppDumper dump (May 2026 build, names now stale): ...\New Hoopland basketball\HooplandGameSource\dump.cs
 - Class extracts in research\ (from old dump)
+
+## Season screens (0.9.0, 2026-11-16, UNTESTED)
+- Season.cs: draft (static SeasonDraft.draftSelections/draftOrder/currentRound/currentPickNumber/simulatingPicks/isPaused; instance status,pg..c,picks,record,rosterSize), DraftSelection (commissionerText, round, pick, playerCard, continueButton), DraftLottery (top4, continueButton, static isSimulating), DeclareForDraft (question), PlayoffBracket (eastBrackets/westBrackets, currentRoundText). Proven only by compiling against 1.12.1 interop.
+- HYPOTHESIS: draftOrder[picksMade] = team on the clock; bracket children = rounds/matchups; commissionerText holds the full announcement. First open of each screen auto-dumps UserData\HoopLandAccess_<screen>.txt to check.
 
 ## Decisions
 

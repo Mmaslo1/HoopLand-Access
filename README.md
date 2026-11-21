@@ -1,7 +1,12 @@
-﻿# Hoop Land Access
+# Hoop Land Access
 
 A blind accessibility mod for **Hoop Land** (Steam PC basketball), made by a totally blind player with Claude Code.
 Speaks through JAWS: menus, court position, shooting, passing, defense, boundaries, franchise and create-a-player.
+
+## Easy install
+1. Install MelonLoader 0.7.3 into Hoop Land (https://github.com/LavaGang/MelonLoader/releases), start the game once, close it.
+2. Download [HoopLandAccess_0.9.0.zip](https://github.com/Mmaslo1/HoopLand-Access/releases/latest/download/HoopLandAccess_0.9.0.zip) and copy everything in it into the Hoop Land game folder.
+3. Start Hoop Land. The mod speaks through JAWS or NVDA. Read "01 START HERE - HOW TO INSTALL.txt" in the zip.
 
 - `src/` - the mod code (C#)
 - `HOOPLAND_RECAP.txt` - what the mod does and all keys

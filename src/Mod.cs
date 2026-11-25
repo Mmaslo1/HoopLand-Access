@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using MelonLoader;
 
 [assembly: MelonInfo(typeof(HoopLandAccess.Mod), "Hoop Land Access", HoopLandAccess.Mod.Version, "Claude for the player")]
@@ -9,7 +9,7 @@ namespace HoopLandAccess
     /// <summary>Entry point. Keeps the per-frame loop small: each feature lives in its own file.</summary>
     public class Mod : MelonMod
     {
-        public const string Version = "0.9.0";
+        public const string Version = "0.9.1";
 
         public static void Log(string s) => MelonLogger.Msg(s);
 
@@ -27,6 +27,7 @@ namespace HoopLandAccess
             _modePref = cat.CreateEntry("ShotHelp", 0, "0 rising tone, 1 count-in beeps, 2 off");
             Shooting.Mode = _modePref.Value;
             Log("Hoop Land Access " + Version + " loaded.");
+            Updater.Start(Version, (t, i) => Speech.Say(t, interrupt: i), Log);
         }
 
         private bool _greeted;
@@ -44,6 +45,7 @@ namespace HoopLandAccess
                 }
 
                 Keys.Update(now);
+                if (_greeted) Updater.Update();
                 UiScreen.Update();
                 Rebind.Update(MenuReader.SelectedObject());
                 if (TextEntry.Active) TextEntry.Update();
@@ -142,7 +144,8 @@ namespace HoopLandAccess
             }
 
             // F12: save a description of this screen for Claude
-            if (Keys.Pressed(Keys.F(12)))
+            if (Keys.Pressed(Keys.F(12)) && Keys.Held(Keys.Shift) && !(MatchInfo.Active || MenuReader.InLiveGame())) Updater.Key();
+            else if (Keys.Pressed(Keys.F(12)))
             {
                 string path = System.IO.Path.Combine(MelonLoader.Utils.MelonEnvironment.UserDataDirectory, "HoopLandAccess_screen.txt");
                 UiScreen.Dump(path);
